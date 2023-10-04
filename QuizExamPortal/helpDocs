@@ -1,0 +1,180 @@
+USER
+
+POST- localhost:8080/user/
+{
+    "username":"singhal",
+    "firstName":"ANILL",
+    "lastName":"SINGHAL",
+    "password":"testing",
+    "email":"testing@gmail.com",
+    "phone":"7415100782",
+    "profile":"test.jpg"
+}
+
+
+POST- localhost:8080/generate-token
+{
+    "username":"singhal",
+    "password":"testing"
+}
+
+GET- localhost:8080/current-user
+
+GET- localhost:8080/user/category/
+
+GET- localhost:8080/user/category/31
+
+GET- localhost:8080/user/quiz/14
+
+GET- localhost:8080/user/question/16 (quesID)
+
+GET- localhost:8080/user/question/quiz/14 (quiz ID)  All Quizzes
+
+POST- localhost:8080/user/question/eval-quiz
+[{
+        "quesId": 16,
+        "content": "What is Java Programming",
+        "option1": "OOPS",
+        "option2": "Function",
+        "option3": "Method",
+        "option4": "POP",
+        "answer": "OOPS",
+        "givenAnswer": "OOPS",
+        "quiz": {
+            "qId": 14,
+            "title": "Basic Java Quiz",
+            "description": "This quiz contains question of Basic Java",
+            "maxMarks": "150",
+            "numberOfQuestions": "20",
+            "active": false,
+            "category": {
+                "cid": 11,
+                "title": "Programming Language",
+                "description": "This quiz Category contains Quizzez"
+            }
+        }
+    }
+]
+__________________________________________
+
+ADMIN
+
+POST- localhost:8080/admin/
+{
+    "username":"singhal",
+    "firstName":"ANILL",
+    "lastName":"SINGHAL",
+    "password":"testing",
+    "email":"testing@gmail.com",
+    "phone":"7415100782",
+    "profile":"test.jpg"
+}
+
+
+
+POST- localhost:8080/generate-token
+{
+    "username":"jsinghal12",
+    "password":"abc"
+}
+
+
+GET- localhost:8080/admin/singhal(username)
+
+GET- localhost:8080/current-user
+
+Delete- localhost:8080/admin/27
+
+POST- localhost:8080/category/
+{
+    "title":"GK Practice",
+    "description":"This quiz Category contains GK Practice Questions"
+}
+
+PUT- localhost:8080/category/
+{
+    "cid":12,
+    "title":"Aptitude Practice",
+    "description":"This quiz Category contains Aptitude test"
+}
+
+GET- localhost:8080/category/
+
+GET- localhost:8080/category/31(catId)
+
+Delete- localhost:8080/category/31(catId)
+
+POST- localhost:8080/quiz/
+{
+    "title":"Python Basic Quiz",
+    "description":"This quiz contains question of Basic Python",
+    "maxMarks":"200",
+    "numberOfQuestions":"20",
+    "category":{
+        "cid": 11
+    }
+
+}
+
+GET- localhost:8080/quiz/14(quizId)
+
+Delete- localhost:8080/quiz/14(quizId)
+
+PUT- localhost:8080/quiz/
+{
+    "qId":14,
+    "title":"Basic Java Quiz",
+    "description":"This quiz contains question of Basic Java",
+    "maxMarks":"150",
+    "numberOfQuestions":"20",
+    "category":{
+        "cid": 11
+    }
+
+}
+
+POST- localhost:8080/question/
+{
+    "content":"Founder of Java Programming",
+    "image": "java.png",
+    "option1":"OOPS",
+    "option2":"Function",
+    "option3":"Method",
+    "option4":"POP",
+    "answer":"OOPS",
+    "quiz":{
+        "qId":14
+    }
+}
+
+GET- localhost:8080/question/16(quesId)
+
+GET- localhost:8080/question/quiz/14
+
+Delete- localhost:8080/question/16(quesId)
+
+POST- localhost:8080/question/eval-quiz
+[{
+        "quesId": 16,
+        "content": "What is Java Programming",
+        "option1": "OOPS",
+        "option2": "Function",
+        "option3": "Method",
+        "option4": "POP",
+        "answer": "OOPS",
+        "givenAnswer": "OOPS",
+        "quiz": {
+            "qId": 14,
+            "title": "Basic Java Quiz",
+            "description": "This quiz contains question of Basic Java",
+            "maxMarks": "150",
+            "numberOfQuestions": "20",
+            "active": false,
+            "category": {
+                "cid": 11,
+                "title": "Programming Language",
+                "description": "This quiz Category contains Quizzez"
+            }
+        }
+    }
+]
